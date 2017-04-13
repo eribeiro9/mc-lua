@@ -1,21 +1,12 @@
 robot = require("robot")
 
-function nextStep(isUp)
-  if isUp then
-    robot.swingUp()
-    robot.up()
-  else
-    robot.swingDown()
-    robot.down()
-  end
-  robot.swing()
-end
-
 function chopTree()
   local height = 1
 
   while robot.detectUp() do
-    nextStep(true)
+    robot.swingUp()
+    robot.up()
+    robot.swing()
     height = height + 1
   end
 
@@ -26,7 +17,9 @@ function chopTree()
   robot.swing()
 
   for 1, height do
-    nextStep(false)
+    robot.swingDown()
+    robot.down()
+    robot.swing()
   end
 end
 
