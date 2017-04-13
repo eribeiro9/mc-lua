@@ -36,7 +36,7 @@ robot.down()
 robot.turnLeft()
 robot.forward()
 robot.turnLeft()
-for 1, distance do
+for 1, distance + 1 do
   robot.forward()
 end
-robot.forward()
+robot.turnAround()
