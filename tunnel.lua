@@ -1,42 +1,42 @@
-r = require("robot")
+robot = require("robot")
 
-function s()
-  r.swing()
-  r.forward()
-  while r.detectUp() do
-    r.swingUp()
+function step()
+  robot.swing()
+  robot.forward()
+  while robot.detectUp() do
+    robot.swingUp()
   end
-  r.swingDown()
+  robot.swingDown()
 end
 
-d = ...
-d = d + d % 2
+distance = ...
+distance = distance + distance % 2
 
-r.forward()
-r.turnRight()
-r.forward()
-r.turnLeft()
-r.up()
+robot.forward()
+robot.turnRight()
+robot.forward()
+robot.turnLeft()
+robot.up()
 
-for 1, d, 2 do
-  s()
-  r.turnLeft()
-  s()
-  s()
-  r.turnRight()
+for 1, distance, 2 do
+  step()
+  robot.turnLeft()
+  step()
+  step()
+  robot.turnRight()
 
-  s()
-  r.turnRight()
-  s()
-  s()
-  r.turnLeft()
+  step()
+  robot.turnRight()
+  step()
+  step()
+  robot.turnLeft()
 end
 
-r.down()
-r.turnLeft()
-r.forward()
-r.turnLeft()
-for 1, d do
-  r.forward()
+robot.down()
+robot.turnLeft()
+robot.forward()
+robot.turnLeft()
+for 1, distance do
+  robot.forward()
 end
-r.forward()
+robot.forward()
