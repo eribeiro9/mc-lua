@@ -1,13 +1,5 @@
-local robot = require("robot")
+robot = require("robot")
 
--- Initalize robot position
-function readyPosition()
-  robot.swing()
-  robot.forward()
-  robot.swing()
-end
-
--- Chop next two blocks
 function nextStep(isUp)
   if isUp then
     robot.swingUp()
@@ -19,16 +11,6 @@ function nextStep(isUp)
   robot.swing()
 end
 
--- Switch half of tree
-function switchSides()
-  robot.turnLeft()
-  robot.swing()
-  robot.forward()
-  robot.turnRight()
-  robot.swing()
-end
-
--- Chops a 2x2 tree
 function chopTree()
   local height = 1
 
@@ -37,25 +19,24 @@ function chopTree()
     height = height + 1
   end
 
-  switchSides()
+  robot.turnLeft()
+  robot.swing()
+  robot.forward()
+  robot.turnRight()
+  robot.swing()
 
   for 1, height do
     nextStep(false)
   end
 end
 
--- Return to initial position
-function returnPosition()
-  robot.back()
-  robot.turnRight()
-  robot.forward()
-  robot.turnLeft()
-end
+robot.swing()
+robot.forward()
+robot.swing()
 
-
-
--- Main application
--- TODO: Check if has enough fuel
-readyPosition()
 chopTree()
-returnPosition()
+
+robot.back()
+robot.turnRight()
+robot.forward()
+robot.turnLeft()
