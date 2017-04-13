@@ -3,7 +3,7 @@ robot = require("robot")
 distance = ...
 distance = distance + distance % 2 -- round up to even number
 
-function nextStep()
+function step()
   robot.swing()
   robot.forward()
   while robot.detectUp() do
@@ -12,29 +12,25 @@ function nextStep()
   robot.swingDown()
 end
 
-function mineTunnel()
-  for 1, distance, 2 do
-    nextStep()
-    robot.turnLeft()
-    nextStep()
-    nextStep()
-    robot.turnRight()
-
-    nextStep()
-    robot.turnRight()
-    nextStep()
-    nextStep()
-    robot.turnLeft()
-  end
-end
-
 robot.forward()
 robot.turnRight()
 robot.forward()
 robot.turnLeft()
 robot.up()
 
-mineTunnel()
+for 1, distance, 2 do
+  step()
+  robot.turnLeft()
+  step()
+  step()
+  robot.turnRight()
+
+  step()
+  robot.turnRight()
+  step()
+  step()
+  robot.turnLeft()
+end
 
 robot.down()
 robot.turnLeft()
