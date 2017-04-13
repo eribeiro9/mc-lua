@@ -1,42 +1,42 @@
-robot = require("robot")
+r = require("robot")
 
-distance = ...
-distance = distance + distance % 2 -- round up to even number
-
-function step()
-  robot.swing()
-  robot.forward()
-  while robot.detectUp() do
-    robot.swingUp()
+function s()
+  r.swing()
+  r.forward()
+  while r.detectUp() do
+    r.swingUp()
   end
-  robot.swingDown()
+  r.swingDown()
 end
 
-robot.forward()
-robot.turnRight()
-robot.forward()
-robot.turnLeft()
-robot.up()
+d = ...
+d = d + d % 2
 
-for 1, distance, 2 do
-  step()
-  robot.turnLeft()
-  step()
-  step()
-  robot.turnRight()
+r.forward()
+r.turnRight()
+r.forward()
+r.turnLeft()
+r.up()
 
-  step()
-  robot.turnRight()
-  step()
-  step()
-  robot.turnLeft()
+for 1, d, 2 do
+  s()
+  r.turnLeft()
+  s()
+  s()
+  r.turnRight()
+
+  s()
+  r.turnRight()
+  s()
+  s()
+  r.turnLeft()
 end
 
-robot.down()
-robot.turnLeft()
-robot.forward()
-robot.turnLeft()
-for 1, distance do
-  robot.forward()
+r.down()
+r.turnLeft()
+r.forward()
+r.turnLeft()
+for 1, d do
+  r.forward()
 end
-robot.forward()
+r.forward()
