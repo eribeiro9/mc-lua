@@ -1,31 +1,31 @@
-robot = require("robot")
+r = require("robot")
 
-robot.swing()
-robot.forward()
-robot.swing()
+r.swing()
+r.forward()
+r.swing()
 
-local height = 1
+h = 1
 
-while robot.detectUp() do
-  robot.swingUp()
-  robot.up()
-  robot.swing()
-  height = height + 1
+while r.detectUp() do
+  r.swingUp()
+  r.up()
+  r.swing()
+  h = h + 1
 end
 
-robot.turnLeft()
-robot.swing()
-robot.forward()
-robot.turnRight()
-robot.swing()
+r.turnLeft()
+r.swing()
+r.forward()
+r.turnRight()
+r.swing()
 
-for 1, height do
-  robot.swingDown()
-  robot.down()
-  robot.swing()
+for 1, h do
+  r.swingDown()
+  r.down()
+  r.swing()
 end
 
-robot.back()
-robot.turnRight()
-robot.forward()
-robot.turnLeft()
+r.back()
+r.turnRight()
+r.forward()
+r.turnLeft()
