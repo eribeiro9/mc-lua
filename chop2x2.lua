@@ -19,7 +19,7 @@ robot.forward()
 robot.turnRight()
 robot.swing()
 
-for 1, height do
+for i = 1, height do
   robot.swingDown()
   robot.down()
   robot.swing()
